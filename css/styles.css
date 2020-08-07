@@ -234,13 +234,18 @@ nav {
 .family-container {
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	background: #0073a2;
-	clip-path: polygon(0% 0%, 100% 0, 100% 400px,
+	-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 400px,
+			53vw 400px, 50% 425px, 57vw 400px, 0% 400px);
+	        clip-path: polygon(0% 0%, 100% 0, 100% 400px,
 			53vw 400px, 50% 425px, 57vw 400px, 0% 400px);
 	overflow: hidden;
 	z-index: -1;
-	box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
+	-webkit-box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
+	        box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
 }
 
 .family {
@@ -329,21 +334,6 @@ nav {
 	box-shadow: 4px 7px 13px rgba(0, 0, 0, .3);
 }
 
-.grow-in-down.animation {
-	opacity: 0;
-	animation: grow-in-down .4s ease forwards;
-}
-
-@keyframes grow-in-down {
-	from {
-		transform: scale(1.2) translateX(-15px) translateY(20px);
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
 .package-heading {
 	height: 160px;
 	display: flex;
@@ -419,7 +409,7 @@ li {
 }
 
 .deluxe {
-	border: 1px solid #69c2e2;
+/*	border: 1px solid #69c2e2;*/
 	box-shadow: 4px 7px 18px rgba(0, 0, 0, .2);
 }
 
@@ -455,21 +445,6 @@ li {
 
 .also-offer-heading {
 	padding-top: 95px;
-}
-
-.slide-up-grow.animation {
-	opacity: 0;
-	animation: slide-up-grow .3s ease forwards;
-}
-
-@keyframes slide-up-grow {
-	from {
-		transform: scale(.2);
-	}
-
-	to {
-		opacity: 1;
-	}
 }
 
 .additional-services {
@@ -521,24 +496,20 @@ li {
 }
 
 .heather {
-	opacity: 0;
 	z-index: -1;
 	filter: drop-shadow(13px 13px 17px rgb(0, 0, 0, .3));
 }
 
-.slide-up.animation {
-	opacity: 0;
-	animation: slide-up .5s ease forwards;
+/*  Custom Animation Template */
+
+[data-aos="example-anim1"] {
+	 transform: skewX(45deg);
+	 opacity: 0;
+	 transition-property: transform, opacity;
 }
-
-@keyframes slide-up {
-	from {
-		transform: translateY(200px);
-	}
-
-	to {
-		opacity: 1;
-	}
+ [data-aos="example-anim1"].aos-animate {
+	 transform: skewX(0);
+	 opacity: 1;
 }
 
 /*---------------- CUSTOMER REVIEW SECTION ----------------*/
@@ -558,21 +529,6 @@ li {
 
 .star {
 	width: 23px;
-}
-
-.grow.animation {
-	opacity: 0;
-	animation: grow .5s ease forwards;
-}
-
-@keyframes grow {
-	from {
-		transform: scale(.2);
-	}
-
-	to {
-		opacity: 1;
-	}
 }
 
 .review-text {
@@ -656,40 +612,6 @@ footer a:hover {
 	font-size: 1rem;
 	padding-bottom: 20px;
 	opacity: .7;
-}
-
-/*---------------- ANIMATION DELAYS ----------------*/
-
-.delay-50.animation {
-	animation-delay: 50ms;
-}
-
-.delay-100.animation {
-	animation-delay: 100ms;
-}
-
-.delay-150.animation {
-	animation-delay: 150ms;
-}
-
-.delay-200.animation {
-	animation-delay: 200ms;
-}
-
-.delay-250.animation {
-	animation-delay: 250ms;
-}
-
-.delay-300.animation {
-	animation-delay: 300ms;
-}
-
-.delay-400.animation {
-	animation-delay: 400ms;
-}
-
-.delay-500.animation {
-	animation-delay: 500ms;
 }
 
 /*---------------- MEDIA QUERIES ----------------*/

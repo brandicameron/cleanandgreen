@@ -12,39 +12,7 @@ window.onscroll = function () {
 
 // ANIMATE WHEN ELEMENTS SCROLL INTO VIEW
 
-// Based on this tutorial: https://cssanimation.rocks/scroll-animations/
-let scroll = window.requestAnimationFrame ||
-	function (callback) {
-		window.setTimeout(callback, 1000 / 60)
-	};
-
-let animationTarget = document.querySelectorAll('.animate');
-
-function loop() {
-	animationTarget.forEach(function (element) {
-		if (isElementInViewport(element)) {
-			element.classList.add('animation');
-		} else {
-			element.classList.remove('animation');
-		}
-	});
-	scroll(loop);
-}
-loop();
-
-// Helper function from: http://stackoverflow.com/a/7557433/274826
-function isElementInViewport(el) {
-	var rect = el.getBoundingClientRect();
-	return (
-		(rect.top <= 0 &&
-			rect.bottom >= 0) ||
-		(rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
-		(rect.top >= 0 &&
-			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-	);
-}
-
+ <script src="bower_components/aos/dist/aos.js"></script>
 
 
 // UPDATES THE COPYRIGHT YEAR

@@ -76,7 +76,7 @@
 		<!-- *********** PRICING CARDS *********** -->
 
 		<div class="pricing-section">
-			<div class="party package-container animate grow-in-down delay-100">
+			<div class="party package-container" data-aos="zoom-out" data-aos-delay="50">
 				<div class="package-heading">
 					<p class="package-title">Pre-Party Blitz</p>
 					<p class="package-price"><sup>&#36;</sup>75</p>
@@ -98,7 +98,7 @@
 				<a href="contact.html" class="primary-button" aria-label="Schedule a Pre-Party Blitz Clean">Schedule Now</a>
 			</div>
 
-			<div class="basic package-container animate grow-in-down delay-150">
+			<div class="basic package-container" data-aos="zoom-out" data-aos-delay="100">
 				<div class="package-heading">
 					<p class="package-title">Basic</p>
 					<p class="package-price"><sup>&#36;</sup>85</p>
@@ -120,7 +120,7 @@
 				<a href="contact.html" class="primary-button" aria-label="Schedule a Basic Clean">Schedule Now</a>
 			</div>
 
-			<div class="deluxe package-container animate grow-in-down delay-200">
+			<div class="deluxe package-container" data-aos="zoom-out" data-aos-delay="150">
 				<div class="attention-pill">MOST POPULAR</div>
 				<div class="package-heading">
 					<p class="package-title">Deluxe</p>
@@ -143,7 +143,7 @@
 				<a href="contact.html" class="primary-button" aria-label="Schedule a Deluxe Clean" >Schedule Now</a>
 			</div>
 
-			<div class="premium package-container animate grow-in-down delay-250">
+			<div class="premium package-container" data-aos="zoom-out" data-aos-delay="200">
 				<div class="package-heading">
 					<p class="package-title">Premium</p>
 					<p class="package-price"><sup>&#36;</sup>200</p>
@@ -181,7 +181,7 @@
 			<li class="service-item check">Holiday Decor Removal</li>
 		</ul>
 		</div>
-		<a href="contact.html" class="primary-button long-button animate slide-up-grow">GET A CUSTOM QUOTE</a>
+		<a href="contact.html" class="primary-button long-button" data-aos="zoom-in" data-aos-delay="50">GET A CUSTOM QUOTE</a>
 	</section>
 	
 	<!-- *********** ABOUT US / PROUD N'VILLE CO *********** -->
@@ -203,7 +203,7 @@
 				<img src="./img/heather-signature.svg" alt="" class="heather-signature">
 				<p class="tiny-text">Heather Davidson &#8226; Owner</p>
 			</div>
-			<img src="./img/heather.png" alt="Heather Davidson, owner of Clean and Green" class="heather animate slide-up">
+			<img data-aos="slide-up" src="./img/heather.png" alt="Heather Davidson, owner of Clean and Green" class="heather">
 		</div>
 	</section>
 	
@@ -211,11 +211,11 @@
 	
 	<div class="review-container">
 		<div class="stars">
-			<img src="./img/white-star.svg" alt="Five Star Review" class="star animate grow">
-			<img src="./img/white-star.svg" alt="" class="star animate grow delay-150">
-			<img src="./img/white-star.svg" alt="" class="star animate grow delay-200">
-			<img src="./img/white-star.svg" alt="" class="star animate grow delay-250">
-			<img src="./img/white-star.svg" alt="" class="star animate grow delay-300">
+			<img src="./img/white-star.svg" alt="Five Star Review" class="star" data-aos="zoom-in" data-aos-delay="100">
+			<img src="./img/white-star.svg" alt="" class="star" data-aos="zoom-in" data-aos-delay="250">
+			<img src="./img/white-star.svg" alt="" class="star" data-aos="zoom-in" data-aos-delay="400">
+			<img src="./img/white-star.svg" alt="" class="star" data-aos="zoom-in" data-aos-delay="550">
+			<img src="./img/white-star.svg" alt="" class="star" data-aos="zoom-in" data-aos-delay="700">
 		</div>
 		<div class="white-text review-text">I love my house being cleaned without all the chemicals. Heather &amp; the girls will customize your service to give you exactly what you want.</div>
 		<div class="white-text  review-text review-author">KG &#45; Bellevue</div>
@@ -249,8 +249,13 @@
 
 	<a href="#top" class="back-to-top" id="backTop" aria-label="Back to Top"><img src="./img/top.svg" alt=""></a>
 	
-
+	
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+ <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
 <script src="js/main.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
