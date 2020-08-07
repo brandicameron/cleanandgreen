@@ -9,12 +9,10 @@ window.onscroll = function () {
 };
 
 
-
-// ANIMATE WHEN ELEMENTS SCROLL INTO VIEW
-
- <script src="bower_components/aos/dist/aos.js"></script>
-
-
 // UPDATES THE COPYRIGHT YEAR
 const currentYear = new Date().getFullYear();
 document.getElementById("copyYear").textContent = `© ${currentYear} Clean & Green, LLC \u00A0 |\u00A0 \u00A0 All Rights Reserved`;
+
+
+// ACTIVATE ANIMATE ON SCROLL LIBRARY
+AOS.init();

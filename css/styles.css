@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	border: none;
+	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
 	border-color: transparent;
@@ -30,9 +31,18 @@ body {
 	min-width: 100vw;
 	min-height: 100vh;
 	font-size: 1.05rem;
-	box-sizing: border-box;
 	background-color: #fdfdfd;
 	-webkit-overflow-scrolling: touch;
+}
+
+/*---------------- BACK TO TOP BUTTON ----------------*/
+
+.back-to-top {
+	position: fixed;
+	width: 40px;
+	bottom: 5px;
+	right: 15px;
+	visibility: hidden;
 }
 
 /*---------------- UTILITIES/MISC STYLES ----------------*/
@@ -122,58 +132,64 @@ p {
 }
 
 .long-button {
-	width: 225px;
-}
-
-.back-to-top {
-	position: fixed;
-	width: 40px;
-	bottom: 5px;
-	right: 10px;
-	visibility: hidden;
+	width: 235px;
 }
 
 /*---------------- TOP FIXED [TEMP. HIDDEN] CONTACT BAR ----------------*/
 
-.fixed-top-nav {
+.secondary-hidden-nav {
 	position: fixed;
-	width: 100vw;
-	height: 40px;
-	background: var(--gradient);
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
+	background-color: var(--main-color);
+	top: 0;
+	height: 40px;
+	width: 100vw;
 	z-index: 10;
 }
 
-.contact-container {
-	height: 130px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: -3px;
-	text-align: center;
-	width: 90vw;
-}
+.phone-header:hover, .email-header:hover, .like:hover {
+	transition: all 50ms linear;
+	transform: scale(1.02);
+	filter: drop-shadow(7px 7px 5px rgb(0, 0, 0, .3));
 
-.phone-number {
-	color: var(--white-text);
-	font-weight: 700;
 }
 
 .proud {
+	display: flex;
+	align-items: center;
+	background-color: var(--secondary-color);
 	font-weight: 700;
 	font-size: .95rem;
 	letter-spacing: .04rem;
+	text-align: center;
+	padding: 0 30px;
+}
+
+.contact-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 30px;
+}
+
+.phone-header {
+	width: 18px;
+	margin-top: 3px;
+}
+
+.email-header {
+	width: 29px;
+	margin-top: 3px;
 }
 
 .like {
 	width: 25px;
-	margin-top: 5px;
+	margin-top: 3px;
 }
 
 .vertical-divider {
-	margin: 5px 60px;
+	margin: 0 30px;
 	height: 25px;
 	width: 2px;
 	background: #fff;
@@ -229,29 +245,29 @@ nav {
 	width: 230px;
 }
 
-/* ANIMATED FAMILY IMAGE */
-
 .family-container {
 	position: absolute;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	        transform: translateX(-50%);
+	min-height: 450px;
+	width: 100vw;
 	background: #0073a2;
 	-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 400px,
-			53vw 400px, 50% 425px, 57vw 400px, 0% 400px);
-	        clip-path: polygon(0% 0%, 100% 0, 100% 400px,
-			53vw 400px, 50% 425px, 57vw 400px, 0% 400px);
+			48vw 400px, 50% 425px, 52vw 400px, 0% 400px);
+	clip-path: polygon(0% 0%, 100% 0, 100% 400px,
+			48vw 400px, 50% 425px, 52vw 400px, 0% 400px);
 	overflow: hidden;
 	z-index: -1;
 	-webkit-box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
-	        box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
+	box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
 }
 
+
 .family {
-	position: relative;
-	margin-top: -21%;
-	width: 110vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	margin-top: -250px;
+	margin-top: -23vw;
 	opacity: .60;
 	animation: grow-pic 7s ease-out forwards;
 }
@@ -278,8 +294,10 @@ nav {
 
 .banner-tagline {
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 	height: 390px;
+	margin: 0 5vw;
 	justify-content: center;
 	align-items: center;
 	color: var(--white-text);
@@ -316,7 +334,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 20px auto;
+	margin: 20px 0;
 }
 
 .package-container {
@@ -469,7 +487,7 @@ li {
 	font-weight: 700;
 }
 
-/*---------------- ABOUT US / PROUD N'VILLE CO ----------------*/
+/*---------------- ABOUT US ----------------*/
 
 .proud-text {
 	margin: 100px auto 30px auto;
@@ -554,13 +572,12 @@ li {
 }
 
 .friends-text {
-	padding-bottom: 60px;
+	margin: 0 18vw 60px 18vw;
 }
 
 .friends {
 	padding-bottom: 30px;
 }
-
 
 /*---------------- FOOTER SECTION ----------------*/
 
@@ -589,12 +606,16 @@ footer {
 	height: 44px;
 }
 
+.email-footer {
+	width: 45px;
+}
+
 .fb-footer {
 	height: 42px;
 }
 
 footer a:hover {
-	transition: all 150ms linear;
+	transition: all 50ms linear;
 	transform: scale(1.02);
 	filter: drop-shadow(10px 10px 12px rgb(0, 0, 0, .2));
 }
@@ -616,10 +637,28 @@ footer a:hover {
 
 /*---------------- MEDIA QUERIES ----------------*/
 
+
 @media screen and (max-width: 1050px) {
+	
+	.family {
+		width: 135vw;
+		margin: -27vw 0 0 -15vw;
+	}
+	
+	.pricing-section {
+		margin: 20px 5vw;
+	}
+	
+	.package-container {
+		width: 310px;
+	}
 }
 
 @media screen and (max-width: 800px) {
+	
+	.family {
+		margin: -23vw 0 0 -15vw;
+	}
 }
 
 @media screen and (max-width: 415px) {
