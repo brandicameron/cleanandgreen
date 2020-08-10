@@ -141,6 +141,7 @@ p {
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
+	justify-content: center;
 	background-color: var(--main-color);
 	top: 0;
 	height: 40px;
@@ -148,17 +149,16 @@ p {
 	z-index: 10;
 }
 
-.phone-header:hover, .email-header:hover, .like:hover {
-	transition: all 50ms linear;
-	transform: scale(1.02);
-	filter: drop-shadow(7px 7px 5px rgb(0, 0, 0, .3));
-
+.home-button {
+	position: fixed;
+	left: 20px;
+	width: 24px;
+	height: 40px;
 }
 
 .proud {
 	display: flex;
 	align-items: center;
-	background-color: var(--secondary-color);
 	font-weight: 700;
 	font-size: .95rem;
 	letter-spacing: .04rem;
@@ -166,11 +166,16 @@ p {
 	padding: 0 30px;
 }
 
+.proud-mobile {
+	display: none;
+}
+
 .contact-container {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding: 0 30px;
+	position: fixed;
+	right: 25px;
+	top: 2px;
 }
 
 .phone-header {
@@ -186,6 +191,12 @@ p {
 .like {
 	width: 25px;
 	margin-top: 3px;
+}
+
+.phone-header:hover, .email-header:hover, .like:hover, .home-button:hover {
+	transition: all 50ms linear;
+	transform: scale(1.03);
+	filter: drop-shadow(5px 3px 4px rgb(0, 0, 0, .3));
 }
 
 .vertical-divider {
@@ -658,6 +669,18 @@ footer a:hover {
 	
 	.family {
 		margin: -23vw 0 0 -15vw;
+	}
+	
+	.proud {
+		display: none;
+	}
+	
+	.proud-mobile {
+		display: flex;
+	}
+	
+	.vertical-divider {
+		margin: 0 15px;
 	}
 }
 
