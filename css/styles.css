@@ -140,10 +140,8 @@ p {
 .secondary-hidden-nav {
 	position: fixed;
 	display: flex;
-	justify-content: space-between;
 	justify-content: center;
 	background-color: var(--main-color);
-	top: 0;
 	height: 40px;
 	width: 100vw;
 	z-index: 10;
@@ -153,7 +151,7 @@ p {
 	position: fixed;
 	left: 20px;
 	width: 24px;
-	height: 40px;
+	padding: 8px 0;
 }
 
 .proud {
@@ -175,7 +173,7 @@ p {
 	align-items: center;
 	position: fixed;
 	right: 25px;
-	top: 2px;
+	margin-top: 2px;
 }
 
 .phone-header {
@@ -193,7 +191,10 @@ p {
 	margin-top: 3px;
 }
 
-.phone-header:hover, .email-header:hover, .like:hover, .home-button:hover {
+.phone-header:hover,
+.email-header:hover,
+.like:hover,
+.home-button:hover {
 	transition: all 50ms linear;
 	transform: scale(1.03);
 	filter: drop-shadow(5px 3px 4px rgb(0, 0, 0, .3));
@@ -258,29 +259,35 @@ nav {
 
 .family-container {
 	position: absolute;
-	min-height: 450px;
 	width: 100vw;
-	background: #0073a2;
-	-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 400px,
-			48vw 400px, 50% 425px, 52vw 400px, 0% 400px);
-	clip-path: polygon(0% 0%, 100% 0, 100% 400px,
-			48vw 400px, 50% 425px, 52vw 400px, 0% 400px);
+	-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 450px,
+			48vw 450px, 50% 425px, 52vw 450px, 0% 450px);
+	clip-path: polygon(0% 0%, 100% 0, 100% 450px,
+			48vw 450px, 50% 475px, 52vw 450px, 0% 450px);
 	overflow: hidden;
 	z-index: -1;
 	-webkit-box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
 	box-shadow: inset 2px 2px 4px rgb(0, 0, 0, .8);
 }
 
-
 .family {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	margin-top: -250px;
-	margin-top: -23vw;
-	opacity: .60;
+	margin-top: -20vw;
 	animation: grow-pic 7s ease-out forwards;
+}
+
+/* Added color to image as an overlay instead of adding it to the background color of the "container" then lowering the opacity of the image becuase I didn't like the way the dark color would sometimes show for a sec on page load */
+.overlay {
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	;
+	background-color: #0073a2;
+	opacity: .5;
+	z-index: 100;
 }
 
 @keyframes grow-pic {
@@ -307,7 +314,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	height: 390px;
+	height: 450px;
 	margin: 0 5vw;
 	justify-content: center;
 	align-items: center;
@@ -438,7 +445,6 @@ li {
 }
 
 .deluxe {
-/*	border: 1px solid #69c2e2;*/
 	box-shadow: 4px 7px 18px rgba(0, 0, 0, .2);
 }
 
@@ -474,6 +480,7 @@ li {
 
 .also-offer-heading {
 	padding-top: 95px;
+	text-align: center;
 }
 
 .additional-services {
@@ -532,13 +539,14 @@ li {
 /*  Custom Animation Template */
 
 [data-aos="example-anim1"] {
-	 transform: skewX(45deg);
-	 opacity: 0;
-	 transition-property: transform, opacity;
+	transform: skewX(45deg);
+	opacity: 0;
+	transition-property: transform, opacity;
 }
- [data-aos="example-anim1"].aos-animate {
-	 transform: skewX(0);
-	 opacity: 1;
+
+[data-aos="example-anim1"].aos-animate {
+	transform: skewX(0);
+	opacity: 1;
 }
 
 /*---------------- CUSTOMER REVIEW SECTION ----------------*/
@@ -650,39 +658,156 @@ footer a:hover {
 
 
 @media screen and (max-width: 1050px) {
-	
+
 	.family {
 		width: 135vw;
 		margin: -27vw 0 0 -15vw;
 	}
-	
+
 	.pricing-section {
 		margin: 20px 5vw;
 	}
-	
+
 	.package-container {
 		width: 310px;
 	}
 }
 
 @media screen and (max-width: 800px) {
-	
-	.family {
-		margin: -23vw 0 0 -15vw;
+
+	.family-container {
+		height: 475px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
 	}
-	
+
+	.family {
+		margin-top: -10px;
+	}
+
 	.proud {
 		display: none;
 	}
-	
+
 	.proud-mobile {
 		display: flex;
 	}
-	
+
 	.vertical-divider {
-		margin: 0 15px;
+		margin: 0 18px;
 	}
+
+	.about-text {
+		font-size: 1.03rem;
+		line-height: 1.7rem;
+		width: 40vw;
+	}
+
+	.heather-signature {
+		width: 260px;
+		margin-top: -10px;
+	}
+
 }
 
 @media screen and (max-width: 415px) {
+
+	p {
+		max-width: 300px;
+	}
+
+	.heading-lg {
+		font-size: calc(1.85rem + 6.5vmin);
+		font-weight: 900;
+		line-height: 100%;
+		letter-spacing: -.07rem;
+	}
+
+	nav {
+		display: none;
+	}
+
+	.secondary-hidden-nav {
+		height: 75px;
+		bottom: 0;
+		/*		transform: scale(1.2);*/
+		overflow: hidden;
+	}
+	
+	.proud-mobile {
+		display: none;
+	}
+
+	.home-button {
+		position: absolute;
+		width: 45px;
+		left: 20px;
+		top: 5px;
+	}
+
+	.phone-header {
+		width: 30px;
+		margin-top: 3px;
+	}
+
+	.email-header {
+		width: 50px;
+		margin-top: 3px;
+	}
+
+	.like {
+		width: 40px;
+		margin-top: 3px;
+	}
+
+	.also-offer-heading {
+		padding-top: 115px;
+		margin-bottom: -10px;
+		max-width: 300px;
+	}
+
+	.contact-container {
+		margin-top: 8px;
+	}
+
+	.family-container {
+		-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 320px,
+				45vw 320px, 50% 345px, 55vw 320px, 0% 320px);
+		clip-path: polygon(0% 0%, 100% 0, 100% 320px,
+				45vw 320px, 50% 345px, 55vw 320px, 0% 320px);
+	}
+
+	.family {
+		margin-top: -200px;
+	}
+
+	.banner-tagline {
+		height: 320px;
+		transform: scale(1.1);
+	}
+
+	.proud-text {
+		max-width: 75vw;
+	}
+
+	.about-text {
+		font-size: 1.03rem;
+		line-height: 1.7rem;
+		width: 90vw;
+	}
+
+	.heather {
+		margin-bottom: -55px;
+		width: 85%;
+	}
+	
+	.facebook-section {
+		padding-bottom: 90px;
+	}
+
+	footer {
+		display: none;
+	}
 }
